@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:lesson.properties"/>
+
+    <bean id="popMusic1" class="com.example.simp.PopMusic">
+        <property name="time" value="61"/>
+    </bean>
+
+    <bean id="rockMusic1" class="com.example.simp.RockMusic">
+        <property name="time" value="21"/>
+    </bean>
+
+    <bean id="player" class="com.example.simp.Player">
+        <constructor-arg ref="rockMusic1"/>
+    </bean>
+
+    <bean id="student" class="com.example.demo.Student">
+        <property name="no" value="15"/>
+        <property name="name" value="Tom"/>
+    </bean>
+
+    <bean id="cat" class="com.example.simple.Cat" scope="singleton">
+        <property name="name" value="${cat.name}"/>
+    </bean>
+
+    <bean id="utils" class="com.example.simple.Utils">
+        <constructor-arg ref="cat"/>
+    </bean>
+
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+
+    <bean id="lifecycleBean"
+          class="com.example.demo.LifecycleBean"
+          init-method="customInit"
+          destroy-method="customDestroy">
+    </bean>
+</beans>
