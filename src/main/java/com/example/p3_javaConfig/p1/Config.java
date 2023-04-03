@@ -3,6 +3,7 @@ package com.example.p3_javaConfig.p1;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 import java.util.List;
 

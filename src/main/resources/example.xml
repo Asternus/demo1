@@ -18,9 +18,9 @@
         <property name="time" value="21"/>
     </bean>
 
-    <bean id="player" class="com.example.simp.Player">
+   <!-- <bean id="player" class="com.example.simp.Player">
         <constructor-arg ref="rockMusic1"/>
-    </bean>
+    </bean>-->
 
     <bean id="student" class="com.example.demo.Student">
         <property name="no" value="15"/>
